@@ -258,7 +258,7 @@ export default function Home() {
                   {step.body}
                 </p>
                 {i < PROCESS.length - 1 && (
-                  <span className="absolute right-[-1rem] top-1 hidden text-[#2A3040] lg:block">
+                  <span className="absolute right-4 top-1 hidden text-[#2A3040] lg:block">
                     /
                   </span>
                 )}
