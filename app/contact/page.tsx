@@ -113,7 +113,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="group flex h-12 w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#22D3EE] to-[#8B5CF6] px-6 text-sm font-semibold text-[#05070D] transition-transform hover:scale-[1.01] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#22D3EE] disabled:opacity-60 sm:w-auto"
+                  className="group flex h-12 w-full items-center justify-center gap-2 rounded-full bg-linear-to-r from-[#22D3EE] to-[#8B5CF6] px-6 text-sm font-semibold text-[#05070D] transition-transform hover:scale-[1.01] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#22D3EE] disabled:opacity-60 sm:w-auto"
                 >
                   {submitting ? "Sending…" : "Send message"}
                   {!submitting && (

@@ -33,7 +33,7 @@ function TerminalCard() {
     <div className="relative w-full max-w-md">
       <div
         aria-hidden
-        className="absolute -inset-6 rounded-[2rem] bg-gradient-to-br from-[#22D3EE]/20 to-[#8B5CF6]/20 blur-2xl motion-reduce:hidden"
+        className="absolute -inset-6 rounded-4xl bg-linear-to-br from-[#22D3EE]/20 to-[#8B5CF6]/20 blur-2xl motion-reduce:hidden"
       />
       <div className="relative rounded-2xl border border-white/10 bg-[#0B0F19]/90 shadow-2xl shadow-black/50 backdrop-blur">
         <div className="flex items-center gap-1.5 border-b border-white/5 px-4 py-3">
@@ -44,7 +44,7 @@ function TerminalCard() {
             meridian-cli — production
           </span>
         </div>
-        <div className="min-h-[220px] p-5 font-mono text-[13px] leading-6">
+        <div className="min-h-55 p-5 font-mono text-[13px] leading-6">
           {TERMINAL_LINES.slice(0, visible).map((line, i) => (
             <p
               key={i}
@@ -59,7 +59,7 @@ function TerminalCard() {
               {line}
             </p>
           ))}
-          <span className="inline-block h-[14px] w-[7px] translate-y-[2px] bg-[#22D3EE] motion-safe:animate-[blink_1s_step-end_infinite]" />
+          <span className="inline-block h-3.5 w-1.75 translate-y-0.5 bg-[#22D3EE] motion-safe:animate-[blink_1s_step-end_infinite]" />
         </div>
       </div>
       <div className="absolute -bottom-4 -right-4 flex items-center gap-2 rounded-full border border-white/10 bg-[#0B0F19] px-4 py-2 shadow-xl">
@@ -161,7 +161,7 @@ export default function Home() {
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <a
                 href="#contact"
-                className="group flex h-12 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#22D3EE] to-[#8B5CF6] px-6 text-sm font-semibold text-[#05070D] transition-transform hover:scale-[1.02] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#22D3EE]"
+                className="group flex h-12 items-center justify-center gap-2 rounded-full bg-linear-to-r from-[#22D3EE] to-[#8B5CF6] px-6 text-sm font-semibold text-[#05070D] transition-transform hover:scale-[1.02] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#22D3EE]"
               >
                 Book an assessment
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
@@ -214,7 +214,7 @@ export default function Home() {
                 key={title}
                 className="group rounded-2xl border border-white/8 bg-[#0F1420] p-6 transition-colors hover:border-[#22D3EE]/30"
               >
-                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-[#22D3EE]/15 to-[#8B5CF6]/15">
+                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-linear-to-br from-[#22D3EE]/15 to-[#8B5CF6]/15">
                   <Icon className="h-5 w-5 text-[#22D3EE]" strokeWidth={1.75} />
                 </div>
                 <h3 className="text-base font-semibold">{title}</h3>
@@ -229,7 +229,7 @@ export default function Home() {
           <div className="mx-auto grid max-w-6xl grid-cols-2 gap-8 px-6 py-16 sm:grid-cols-4">
             {STATS.map((s) => (
               <div key={s.label} className="text-center sm:text-left">
-                <p className="bg-gradient-to-r from-[#22D3EE] to-[#8B5CF6] bg-clip-text text-3xl font-semibold tracking-tight text-transparent">
+                <p className="bg-linear-to-r from-[#22D3EE] to-[#8B5CF6] bg-clip-text text-3xl font-semibold tracking-tight text-transparent">
                   {s.value}
                 </p>
                 <p className="mt-1 text-xs text-[#7C8698]">{s.label}</p>
@@ -272,7 +272,7 @@ export default function Home() {
           <div className="relative overflow-hidden rounded-3xl border border-white/8 bg-[#0F1420] px-8 py-16 text-center sm:px-16">
             <div
               aria-hidden
-              className="pointer-events-none absolute -top-24 left-1/2 h-64 w-[36rem] -translate-x-1/2 rounded-full bg-gradient-to-r from-[#22D3EE]/20 to-[#8B5CF6]/20 blur-3xl"
+              className="pointer-events-none absolute -top-24 left-1/2 h-64 w-xl -translate-x-1/2 rounded-full bg-linear-to-r from-[#22D3EE]/20 to-[#8B5CF6]/20 blur-3xl"
             />
             <div className="relative">
               <Server className="mx-auto mb-6 h-8 w-8 text-[#22D3EE]" strokeWidth={1.5} />
@@ -285,7 +285,7 @@ export default function Home() {
               </p>
               <a
                 href="mailto:hello@meridiansystems.example"
-                className="mt-8 inline-flex h-12 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#22D3EE] to-[#8B5CF6] px-7 text-sm font-semibold text-[#05070D] transition-transform hover:scale-[1.02] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#22D3EE]"
+                className="mt-8 inline-flex h-12 items-center justify-center gap-2 rounded-full bg-linear-to-r from-[#22D3EE] to-[#8B5CF6] px-7 text-sm font-semibold text-[#05070D] transition-transform hover:scale-[1.02] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#22D3EE]"
               >
                 Talk to an engineer
                 <ArrowRight className="h-4 w-4" />
