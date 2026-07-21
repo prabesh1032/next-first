@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-// ✅ Define the type for navigation links
+// Define the type for navigation links
 type NavLink = {
   href: string;
   label: string;

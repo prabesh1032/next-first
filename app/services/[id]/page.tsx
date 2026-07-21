@@ -8,7 +8,7 @@ import { ArrowLeft, Check, ArrowRight } from "lucide-react";
 // 📁 This is the SAME data from your services page
 const SERVICES = [
   {
-    id: "cloud-infrastructure", // ✅ Add unique ID for each service
+    id: "cloud-infrastructure",  // ✅ Add unique ID for each service
     icon: "Cloud",
     title: "Cloud infrastructure",
     body: "We provision, scale, and cost-tune AWS, GCP, or Azure environments end to end.",
@@ -96,28 +96,17 @@ export default function ServicePage() {
   // 🔍 Find the service with matching ID
   const service = SERVICES.find((s) => s.id === id);
 
+  // ❌ If service not found, show 404
   if (!service) {
     return (
-      <main className="flex-1">
-        <div className="mx-auto max-w-6xl px-6 py-20">
-          <Link
-            href="/services"
-            className="inline-flex items-center gap-2 text-sm text-[#9BA5B7] hover:text-[#E7EBF3]"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Back to all services
+      <div className="flex min-h-screen items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-4xl font-bold">Service not found</h1>
+          <Link href="/services" className="mt-4 inline-block text-[#22D3EE]">
+            ← Back to services
           </Link>
-
-          <div className="mt-8">
-            <h1 className="text-4xl font-bold tracking-tight">
-              Service not found
-            </h1>
-            <p className="mt-4 text-lg text-[#9BA5B7]">
-              The requested service could not be found.
-            </p>
-          </div>
         </div>
-      </main>
+      </div>
     );
   }
 
@@ -137,19 +126,14 @@ export default function ServicePage() {
         <div className="mt-8 grid grid-cols-1 gap-12 lg:grid-cols-2">
           {/* Left: Info */}
           <div>
-            <h1 className="text-4xl font-bold tracking-tight">
-              {service.title}
-            </h1>
+            <h1 className="text-4xl font-bold tracking-tight">{service.title}</h1>
             <p className="mt-4 text-lg text-[#9BA5B7]">{service.body}</p>
             <p className="mt-4 text-[#9BA5B7]">{service.description}</p>
 
             <h3 className="mt-8 text-xl font-semibold">What is included:</h3>
             <ul className="mt-4 space-y-3">
               {service.includes.map((item) => (
-                <li
-                  key={item}
-                  className="flex items-start gap-2 text-[#9BA5B7]"
-                >
+                <li key={item} className="flex items-start gap-2 text-[#9BA5B7]">
                   <Check className="mt-0.5 h-5 w-5 shrink-0 text-[#34D399]" />
                   {item}
                 </li>
@@ -158,7 +142,7 @@ export default function ServicePage() {
 
             <Link
               href="/contact"
-              className="mt-8 inline-flex h-12 items-center gap-2 rounded-full bg-linear-to-r from-[#22D3EE] to-[#8B5CF6] px-6 text-sm font-semibold text-[#05070D] transition-transform hover:scale-[1.02]"
+              className="mt-8 inline-flex h-12 items-center gap-2 rounded-full bg-gradient-to-r from-[#22D3EE] to-[#8B5CF6] px-6 text-sm font-semibold text-[#05070D] transition-transform hover:scale-[1.02]"
             >
               Get this service
               <ArrowRight className="h-4 w-4" />
@@ -166,7 +150,7 @@ export default function ServicePage() {
           </div>
 
           {/* Right: Image */}
-          <div className="relative h-100 w-full overflow-hidden rounded-2xl border border-white/10">
+          <div className="relative h-[400px] w-full overflow-hidden rounded-2xl border border-white/10">
             <Image
               src={service.image}
               alt={service.title}
